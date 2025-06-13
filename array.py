@@ -22,3 +22,25 @@ def removeDuplicates(nums: List[int]) -> int:
 nums = [1, 1, 2, 3, 5, 5]
 lenght = removeDuplicates(nums)
 print(nums[:lenght])
+
+
+# 28. Find the Index of the First Occurrence in a String
+
+
+def strStr(haystack: str, needle: str) -> int:
+
+    for i in range(
+        len(haystack) - len(needle) + 1
+    ):  # for i in rangeof the lenght of the haystack minus the len of needle plus1
+        if (
+            haystack[i : i + len(needle)] == needle
+        ):  # the string from haystack is the same as needle
+            return i  # then return it here
+
+    return -1  # if there is no comparison just return -1 , this is a test case
+
+
+haystack = "Hero"
+needle = "ro"
+result = strStr(haystack, needle)
+print(result)
